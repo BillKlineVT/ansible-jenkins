@@ -17,6 +17,8 @@
       - "{{ jenkins_home }}:/var/jenkins_home"
     env:
       JAVA_OPTS: "{{ jenkins_java_opts }}"
+    networks:
+      - name: devops
   register: container_result
   when: jenkins_docker_expose_port
 
